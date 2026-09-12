@@ -1,19 +1,22 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
+
 metadata:
   name: spring-ingress
   labels:
     app.kubernetes.io/name: spring-ingress
+
 spec:
   ingressClassName: traefik
+
   rules:
-  - host: api.soytola.site
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: spring-app
-            port: 
-              number: 8080
+    - host: api.soytola.site
+      http:
+        paths:
+          - path: /a
+            pathType: Prefix
+            backend:
+              service:
+                name: spring-app
+                port:
+                  number: 8080
