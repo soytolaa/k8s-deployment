@@ -1,22 +1,22 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
 
 metadata:
-  name: spring-ingress
-  labels:
-    app.kubernetes.io/name: spring-ingress
+  name: spring-route
 
 spec:
-  ingressClassName: traefik
+  parentRefs:
+    - name: traefik-gateway
+
+  hostnames:
+    - api.soytola.site
 
   rules:
-    - host: api.soytola.site
-      http:
-        paths:
-          - path: /a
-            pathType: Prefix
-            backend:
-              service:
-                name: spring-app
-                port:
-                  number: 8080
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+
+      backendRefs:
+        - name: spring-app
+          port: 8080
