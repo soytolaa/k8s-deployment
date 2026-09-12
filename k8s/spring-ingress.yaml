@@ -1,9 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
+
 metadata:
   name: spring-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: traefik
+
+  tls:
+    - hosts:
+        - api.soytola.site
+      secretName: api-tls
   rules:
     - host: api.soytola.site
       http:
