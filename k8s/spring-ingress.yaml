@@ -1,9 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: springingress
+  name: spring-ingress
   labels:
-    app.kubernetes.io/name: myingress
+    app.kubernetes.io/name: spring-ingress
 spec:
   rules:
   - host: api.soytola.site

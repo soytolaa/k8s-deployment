@@ -4,7 +4,7 @@ metadata:
   name: spring-service
 spec:
   selector:
-    app: myapp
+    app: spring-app
   ports:
   - port: 8080
     targetPort: 8080

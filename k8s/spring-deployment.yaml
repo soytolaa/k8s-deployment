@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-dpl
+  name: spring-deployment
 spec:
   replicas: 3
   selector:
