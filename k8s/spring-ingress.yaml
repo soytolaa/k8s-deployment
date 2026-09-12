@@ -5,10 +5,15 @@ metadata:
   labels:
     app.kubernetes.io/name: spring-ingress
 spec:
+  ingressClassName: traefik
   rules:
   - host: api.soytola.site
     http:
       paths:
       - pathType: Prefix
-        path: /api
-
+        path: "/"
+        backend:
+          service:
+            name: spring-app
+            port: 
+              number: 8080
