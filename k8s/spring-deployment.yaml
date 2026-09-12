@@ -1,21 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: spring-deployment
+
 spec:
   replicas: 3
+
   selector:
     matchLabels:
       app: spring-app
+
   template:
     metadata:
       labels:
         app: spring-app
+
     spec:
       imagePullSecrets:
         - name: dockerhub-secret
+
       containers:
-      - name: spring-cont
-        image: megmind007/file-upload
-        ports:
-        - containerPort: 8080
+        - name: spring-cont
+          image: megmind007/file-upload
+          ports:
+            - containerPort: 8080
