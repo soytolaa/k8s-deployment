@@ -12,6 +12,8 @@ spec:
       labels:
         app: spring-app
     spec:
+      imagePullSecrets:
+        - name: dockerhub-secret
       containers:
       - name: spring-cont
         image: megmind007/file-upload:v.1.1.1
