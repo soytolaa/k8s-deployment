@@ -22,6 +22,6 @@ spec:
 
       containers:
         - name: spring-cont
-          image: megmind007/file-upload
+          image: megamind007/file-upload:v.1.1.1
           ports:
             - containerPort: 8080
