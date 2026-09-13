@@ -15,7 +15,7 @@ spec:
     - host: api.soytola.site
       http:
         paths:
-          - path: /product
+          - path: /
             pathType: Prefix
             backend:
               service:
