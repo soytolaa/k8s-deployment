@@ -4,7 +4,7 @@ metadata:
   name: spring-route
 spec:
   parentRefs:
-    - name: traefik
+    - name: traefik-gateway
 
   hostnames:
     - api.soytola.site
